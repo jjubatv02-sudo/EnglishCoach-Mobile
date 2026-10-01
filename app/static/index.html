@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover,user-scalable=no">
+  <meta name="theme-color" content="#ffffff">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="EnglishCoach">
+  <title>EnglishCoach Mobile v0.2</title>
+  <link rel="manifest" href="/static/manifest.webmanifest">
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+<main class="app-shell">
+  <header class="topbar">
+    <strong>EnglishCoach</strong>
+    <span id="count">Mobile v0.2</span>
+  </header>
+
+  <section id="start" class="screen start-screen">
+    <div class="eyebrow">매일 10분 · 직접 만드는 영어</div>
+    <h1>오늘의 영어 훈련</h1>
+    <p class="lead">정답을 보기 전에 먼저 내 영어를 만들어보세요.</p>
+    <div class="feature-card">
+      <div><b>15문제</b><span>짧은 모바일 세션</span></div>
+      <div><b>Retry</b><span>힌트 후 다시 말하기</span></div>
+      <div><b>기록</b><span>첫 시도까지 저장</span></div>
+    </div>
+    <button class="primary bottom-action" onclick="startSession()">10분 훈련 시작</button>
+  </section>
+
+  <section id="learn" class="screen learn-screen" hidden>
+    <div class="progress-track"><div id="progressBar" class="progress-bar"></div></div>
+    <div class="pattern" id="pattern"></div>
+    <h1 id="prompt" class="prompt"></h1>
+    <p class="instruction">영어로 직접 만들어보세요.</p>
+    <form onsubmit="submitAnswer(event)" class="answer-form">
+      <label class="sr-only" for="answer">영어 답변</label>
+      <input id="answer" autocomplete="off" autocapitalize="sentences" enterkeyhint="done" spellcheck="false" placeholder="영어로 입력하세요">
+      <button class="primary" id="submitBtn">확인</button>
+    </form>
+    <div id="feedback" aria-live="polite"></div>
+    <button class="secondary" id="next" hidden onclick="nextExercise()">다음 →</button>
+  </section>
+
+  <section id="done" class="screen done-screen" hidden>
+    <div class="complete-mark">✓</div>
+    <h1>오늘 훈련 완료</h1>
+    <p class="lead">첫 시도와 재시도를 모두 학습 기록에 반영했습니다.</p>
+    <div id="summary" class="summary-card"></div>
+    <button class="primary bottom-action" onclick="location.reload()">새 세션 시작</button>
+  </section>
+</main>
+<script src="/static/app.js"></script>
+</body>
+</html>

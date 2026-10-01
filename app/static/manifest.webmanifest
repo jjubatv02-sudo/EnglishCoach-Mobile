@@ -1,0 +1,10 @@
+{
+  "name": "EnglishCoach Mobile",
+  "short_name": "EnglishCoach",
+  "description": "모바일 영어 문장 생성 훈련",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#ffffff",
+  "lang": "ko"
+}
