@@ -1,0 +1,21 @@
+EnglishCoach Mobile v0.2 - 삼성 휴대폰 테스트
+
+1) PC에서 이 폴더를 엽니다.
+2) CMD에서 최초 1회:
+   pip install -r requirements.txt
+3) 실행:
+   python run.py
+4) 화면에 Mobile: http://192.168.x.x:8000 형태의 주소가 표시됩니다.
+5) PC와 삼성 휴대폰을 같은 Wi-Fi에 연결합니다.
+6) 삼성 인터넷 또는 Chrome 주소창에 Mobile 주소를 그대로 입력합니다.
+7) '10분 훈련 시작'을 눌러 모바일 화면을 테스트합니다.
+
+접속이 안 되면:
+- PC와 휴대폰이 같은 Wi-Fi인지 확인
+- Windows 방화벽에서 Python의 '개인 네트워크' 접근 허용
+- 회사/공용 Wi-Fi는 기기간 통신을 차단할 수 있으므로 가정용 Wi-Fi 권장
+
+PWA/마이크 관련:
+- 이 v0.2는 모바일 텍스트 학습과 PWA 구조 준비 버전입니다.
+- http://192.168... 같은 LAN HTTP 주소는 브라우저 보안상 Service Worker/PWA 설치 및 마이크 기능이 제한될 수 있습니다.
+- 다음 음성 버전에서는 HTTPS 테스트 주소를 사용해 휴대폰 마이크를 연결합니다.
